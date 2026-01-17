@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-01-16T14:35:00.000Z",
+  "totalScenes": 16,
+  "orientations": 8,
+  "modes": 2,
+  "expectedScreenshotsPerScene": 16,
+  "scenes": [
+    {
+      "scene": "scene1_example",
+      "files": 16,
+      "unique": 16,
+      "orientations": ["axis0", "axis1", "axis2", "axis3", "top", "bottom"],
+      "modes": ["all", "no_spots"],
+      "details": "8 orientations (6 cube faces + top/bottom) × 2 modes (normal + without hotspots) = 16 screenshots per scene"
+    },
+    {
+      "scene": "scene2_example",
+      "files": 16,
+      "unique": 16,
+      "orientations": ["axis0", "axis1", "axis2", "axis3", "top", "bottom"],
+      "modes": ["all", "no_spots"]
+    }
+  ],
+  "notes": {
+    "total_screenshots": 256,
+    "estimated_size_mb": 512,
+    "modes_explained": {
+      "all": "Normal FOV (90°) with hotspots visible",
+      "no_spots": "Zoomed out FOV (120°) with hotspots hidden for clean documentation"
+    },
+    "orientations_explained": {
+      "axis0": "Front view (0°)",
+      "axis1": "Right view (90°)",
+      "axis2": "Back view (180°)",
+      "axis3": "Left view (270°)",
+      "top": "Top view (-90° vertical)",
+      "bottom": "Bottom view (90° vertical)"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "startedAt": "2026-01-16T12:00:00.000Z",
+  "downloadedAt": "2026-01-16T14:30:00.000Z",
+  "status": "completed",
+  "tour": "example-tour",
+  "statistics": {
+    "total_files": 1250,
+    "downloaded_files": 1245,
+    "failed_files": 5,
+    "blocked_files": 0,
+    "total_bytes": 327680000,
+    "estimated_mb": 312.5
+  },
+  "files": {
+    "http://example.com/index.html": {
+      "status": "downloaded",
+      "size": 5240,
+      "attempts": 1,
+      "updatedAt": "2026-01-16T12:02:00.000Z"
+    },
+    "http://example.com/tour.js": {
+      "status": "downloaded",
+      "size": 125480,
+      "attempts": 1,
+      "updatedAt": "2026-01-16T12:02:15.000Z"
+    },
+    "http://example.com/tour.xml": {
+      "status": "downloaded",
+      "size": 8920,
+      "attempts": 1,
+      "updatedAt": "2026-01-16T12:02:30.000Z"
+    },
+    "http://example.com/panos/scene1.tiles/b/0_0.jpg": {
+      "status": "downloaded",
+      "size": 245120,
+      "attempts": 1,
+      "updatedAt": "2026-01-16T12:05:00.000Z"
+    },
+    "http://example.com/panos/scene1.tiles/d/0_0.jpg": {
+      "status": "downloaded",
+      "size": 268400,
+      "attempts": 1,
+      "updatedAt": "2026-01-16T12:06:30.000Z"
+    }
+  },
+  "notes": "This is an example log showing the structure of download_log.json. Your actual downloads will have hundreds of file entries with real URLs and sizes."
+}

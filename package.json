@@ -1,0 +1,90 @@
+{
+  "name": "krpano-qa-tester",
+  "version": "2.0.0",
+  "description": "Puppeteer-based QA automation framework for testing krpano 360° panoramic tours. Supports English, Español, and Deutsch documentation.",
+  "longDescription": "Multi-language QA testing automation for krpano panoramic tours with visual regression testing, accessibility validation, and CI/CD integration. Documentation available in English (UK), Español (Latinoamérica), and Deutsch (Schweiz).",
+  "documentation": {
+    "en": "English (UK) documentation at ./docs/en/README.md",
+    "es": "Documentación en Español (Latinoamérica) en ./docs/es/README.md",
+    "de": "Deutsche Dokumentation (Schweiz) unter ./docs/de/README.md"
+  },
+  "main": "index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js --puppeteer",
+    "test": "node index.js --puppeteer --screenshots",
+    "test-show": "node index.js --puppeteer --show",
+    "debug": "node --inspect index.js --puppeteer",
+    "help": "node index.js --help"
+  },
+  "keywords": [
+    "krpano",
+    "puppeteer",
+    "qa-testing",
+    "automation",
+    "360-tour-testing",
+    "360-panorama",
+    "visual-regression-testing",
+    "e2e-testing",
+    "ui-testing",
+    "tour-validation",
+    "compatibility-testing",
+    "performance-testing",
+    "quality-assurance",
+    "web-automation",
+    "headless-browser",
+    "tour-testing",
+    "panoramic-testing",
+    "3d-experience-testing",
+    "testing-framework",
+    "screenshot-generation",
+    "automated-testing",
+    "ci-cd",
+    "qa-tasks",
+    "testing-tools"
+  ],
+  "author": "Community",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rjacomep/krpano_with_puppeteer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rjacomep/krpano_with_puppeteer/issues"
+  },
+  "homepage": "https://github.com/rjacomep/krpano_with_puppeteer#readme",
+  "topics": [
+    "qa-testing",
+    "puppeteer",
+    "krpano",
+    "automation",
+    "testing-framework",
+    "360-tour",
+    "e2e-testing",
+    "visual-regression",
+    "javascript",
+    "nodejs"
+  ],
+  "languagesSupported": {
+    "code": "JavaScript/Node.js",
+    "documentation": ["English (UK)", "Español (Latinoamérica)", "Deutsch (Schweiz)"]
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.3",
+    "js-yaml": "^4.1.0",
+    "node-fetch": "^3.3.2",
+    "p-queue": "^8.1.1",
+    "puppeteer": "^24.35.0",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {},
+  "bin": {
+    "krpano-qa-tester": "./index.js"
+  }
+}
+

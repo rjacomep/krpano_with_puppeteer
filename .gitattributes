@@ -1,0 +1,31 @@
+# GitHub Linguist Configuration
+# This file tells GitHub's Linguist library how to categorize files in the repository
+
+# Mark all documentation files as documentation (not counted in language statistics)
+docs/** linguist-documentation
+README_MAIN.md linguist-documentation
+*.md linguist-documentation
+
+# Mark media files as documentation
+screenshots/** linguist-documentation
+screenshots_old/** linguist-documentation
+
+# Mark configuration files
+*.yaml linguist-documentation
+*.json linguist-documentation
+*.xml linguist-documentation
+
+# Ensure core source code is properly detected
+# JavaScript/Node.js files are the primary language
+*.js linguist-language=JavaScript
+
+# Mark tour_offline directory as documentation/generated
+tour_offline/** linguist-documentation
+
+# Vendored dependencies (if tracked)
+node_modules/** linguist-vendored
+package-lock.json linguist-generated
+
+# Make sure these are recognized as code, not documentation
+src/** linguist-detectable
+index.js linguist-detectable

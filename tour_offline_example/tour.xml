@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.20.12">
+
+  <!-- TOUR_INJECTION_EXAMPLE: Este XML es un ejemplo de cómo el sistema descarga tours krpano -->
+  
+  <include url="skin/vtourskin.xml" />
+
+  <scene name="scene1" title="Escena Principal">
+    <view hlookat="0" vlookat="0" fov="90" />
+    <preview url="http://example.com/preview1.jpg" />
+    <image>
+      <cube url="panos/scene1.tiles/
+              %s" />
+    </image>
+  </scene>
+
+  <scene name="scene2" title="Escena Secundaria">
+    <view hlookat="45" vlookat="0" fov="90" />
+    <preview url="http://example.com/preview2.jpg" />
+    <image>
+      <cube url="panos/scene2.tiles/%s" />
+    </image>
+  </scene>
+
+  <layer name="hotspots" />
+  
+</krpano>

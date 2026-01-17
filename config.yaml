@@ -1,0 +1,158 @@
+# ============================================================================
+# KRPANO QA TESTER - Configuration
+# ============================================================================
+# Automated QA Testing Framework for Krpano 360° Tours
+# 
+# This file centralizes test parameters for:
+# - Tour discovery and structure analysis
+# - Test environment mirror creation
+# - Visual regression testing with screenshots
+# - Performance monitoring
+# ============================================================================
+
+# ====================
+# TEST TARGET CONFIGURATION
+# ====================
+tour:
+  # Tour URL to test - CONFIGURE YOUR TEST TARGET HERE
+  # Example: "https://your-domain.com/tours/test-tour/"
+  # Note: You must have authorization to test this tour
+  baseUrl: "https://tu-dominio.com/recorridos/tu-tour/"
+  
+  # Main tour XML configuration file
+  xmlFile: "tour.xml"
+  
+  # Required base files for tour initialization
+  baseFiles:
+    - "index.html"
+    - "tour.js"
+    - "krpano.js"
+
+# ====================
+# TEST ENVIRONMENT
+# ====================
+download:
+  # Local directory for test environment mirror
+  outputDir: "./tour_offline"
+  
+  # Test run logging directory
+  logDir: "./tour_offline"
+  logFile: "download_log.json"
+  
+  # QA report output file
+  reportFile: "report.json"
+  
+  # Concurrent test requests (increase for faster testing)
+  maxParallel: 5
+  
+  # Retry count for reliability testing
+  maxRetries: 5
+
+# ====================
+# HTTP TEST PARAMETERS
+# ====================
+request:
+  # Base delay between test requests (milliseconds)
+  # Higher = more respectful to server
+  baseDelayMs: 300
+  
+  # Variación aleatoria de delay (ms)
+  jitterMs: 400
+  
+  # Backoff exponencial inicial (ms)
+  retryBackoffBase: 800
+  
+  # User-Agents rotatorios (anti-WAF)
+  userAgents:
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Safari/605.1.15"
+
+# ====================
+# PUPPETEER CONFIGURATION
+# ====================
+puppeteer:
+  # Modo headless (true = sin UI, false = con navegador visible)
+  headless: true
+  
+  # Mostrar devtools
+  showDevtools: false
+  
+  # Viewport por defecto
+  viewport:
+    width: 1280
+    height: 800
+  
+  # Timeout para navegación (ms)
+  navigationTimeout: 60000
+  
+  # Timeout para esperar carga (ms)
+  viewLoadTimeout: 8000
+  
+  # Argumentos del navegador
+  launchArgs:
+    - "--no-sandbox"
+    - "--disable-setuid-sandbox"
+
+# ====================
+# SCREENSHOT CONFIGURATION
+# ====================
+screenshots:
+  # Habilitarscreenshots
+  enabled: true
+  
+  # Directorio destino
+  outputDir: "./screenshots"
+  
+  # Orientaciones de captura (6 cara + 2 polos = 8 orientaciones)
+  orientations:
+    - name: "axis0"
+      heading: 0      # grados
+      vlookat: 0      # vertical
+    - name: "axis1"
+      heading: 90
+      vlookat: 0
+    - name: "axis2"
+      heading: 180
+      vlookat: 0
+    - name: "axis3"
+      heading: 270
+      vlookat: 0
+    - name: "top"
+      heading: 0
+      vlookat: -90
+    - name: "bottom"
+      heading: 0
+      vlookat: 90
+  
+  # Modos de screenshot
+  modes:
+    - name: "all"
+      fov: 90          # Field of View
+    - name: "no_spots"
+      fov: 120         # Zoomed out para ver más
+
+# ====================
+# LOGGING CONFIGURATION
+# ====================
+logging:
+  # Nivel de log
+  level: "info"  # debug, info, warn, error
+  
+  # Archivo de log general
+  generalLogFile: "./logs/krpano_downloader.log"
+  
+  # Archivo de log de errores
+  errorLogFile: "./logs/errors.log"
+
+# ====================
+# PATHS CONFIGURATION
+# ====================
+paths:
+  src: "./src"
+  lib: "./src/lib"
+  utils: "./src/utils"
+  modules: "./src/modules"
+  docs: "./docs"
+  tests: "./tests"
+
